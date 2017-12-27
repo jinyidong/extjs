@@ -8,3 +8,14 @@ sencha app build
 3：启动应用程序 自带的web服务器
 sencha web start
 
+4：extjs命名规则
+Class Name 它应该以大写字母开头，然后是camel case E.g. StudentClass
+Method Name 它应该以小写字母开头，然后是camel case E.g. doLayout()
+Variable Name 它应该以小写字母开头，然后是camel case E.g. firstName
+Constant Name 它应该是只有大写，例如 E.g. COUNT, MAX_VALUE
+Property Name 它应该以小写字母开头，然后是camel case e.g. enableColumnResize = true
+
+5：语法
+类的定义：Ext.define(class name, class members/properties, callback function);
+对象的创建：new Ext.create
+类的继承：extend

@@ -1,0 +1,10 @@
+1：新建Ext项目
+ sencha generate app -ext MyApp C:\MyProjects\ExtJs --classic
+ psw:classic 古典 PC；Modern 现代 Mobile
+
+2：打包Ext项目
+sencha app build
+
+3：启动应用程序 自带的web服务器
+sencha web start
+

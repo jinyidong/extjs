@@ -1,0 +1,81 @@
+{
+	"expanded": true,
+	"children": [
+		{
+			"text": "订单监控",
+			"expanded": true,
+			"cls": "node-link",
+			"children": [
+				{
+					"text": "订单自增初始化",
+					"leaf": true,
+					"cls": "node-link",
+					"mod": "role",
+					"modUrl": "role.Role"
+				},
+				{
+					"text": "订单列表",
+					"leaf": true,
+					"cls": "node-link",
+					"mod": "user",
+					"modUrl": "user.User"
+				}
+			]
+		},
+		{
+			"text": "库存监控",
+			"expanded": false,
+			"cls": "node-link",
+			"children": [
+				{
+					"text": "库存列表",
+					"leaf": true,
+					"cls": "node-link",
+					"mod": "role",
+					"modUrl": "role.Role"
+				},
+				{
+					"text": "异常记录",
+					"leaf": true,
+					"cls": "node-link",
+					"mod": "user",
+					"modUrl": "user.User"
+				}
+			]
+		},
+		{
+			"text": "异常日志",
+			"expanded": false,
+			"children": [
+				{
+					"text": "聚合日志",
+					"leaf": true
+				},
+				{
+					"text": "APM",
+					"leaf": true
+				}
+			]
+		},
+		{
+			"text": "ZooKeeper",
+			"expanded": false,
+			"children": [
+				{
+					"text": "配置节点管理",
+					"leaf": true
+				}
+			]
+		},
+		{
+			"text": "用户管理",
+			"expanded": false,
+			"children": [
+				{
+					"text": "用户管理",
+					"leaf": true
+				}
+			]
+		}
+	]
+}

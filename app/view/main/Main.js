@@ -1,104 +1,51 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
 Ext.define('MyApp.view.main.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
 
-    requires: [
-        'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
+	extend: 'Ext.container.Viewport',
 
-        'MyApp.view.main.MainController',
-        'MyApp.view.main.MainModel',
-        'MyApp.view.main.List'
-    ],
+	xtype: 'app-main',
 
-    controller: 'main',
-    viewModel: 'main',
+	requires: [
+		"MyApp.view.main.MainModel",
+		"MyApp.view.main.MainController",
 
-    ui: 'navigation',
+		'MyApp.view.main.Header',
+		'MyApp.view.main.Nav',
+		'MyApp.view.main.Footer',
+		'MyApp.view.main.Content',
+	],
 
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
+	viewModel: {type: "main"},
 
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
-    },
+	controller: "main",
 
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
+	layout: "border",
 
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
+	items: [
+		{
+		region: "north",
+		height: 45,
+		xtype: "app-header"
+	},
+	 {
+		region: "west",
+		xtype: "app-nav"
+	},
+		, {
+			region: "center",
+			xtype: "app-content"
+		}, 
+		{
+			region: "south",
+			xtype: "app-footer"
+		}
+	],
 
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
-    },
+	initComponent: function () {
 
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+		Ext.QuickTips.init();
+
+		Ext.Msg.minWidth = 300;
+
+		this.callParent(arguments);
+	}
 });

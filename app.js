@@ -4,6 +4,7 @@
  * Sencha Cmd when upgrading.
  */
 Ext.application({
+    
     name: 'MyApp',
 
     extend: 'MyApp.Application',
